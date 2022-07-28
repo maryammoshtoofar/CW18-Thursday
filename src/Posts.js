@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 const Posts = ({ data }) => {
   return (
     <>
@@ -7,7 +8,7 @@ const Posts = ({ data }) => {
           <h2>{post.PostTitle}</h2>
           <small>{post.Author}</small>
           <p>{post.Content.substring(0, 80)}....</p>
-          <button>View Post</button>
+          <Link to={`${post.id}`}>View Post</Link>
         </div>
       ))}
     </>

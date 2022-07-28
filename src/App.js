@@ -11,8 +11,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="posts" element={<Posts />} />
-        <Route path="post" element={<Post />} />
-        <Route path="editpost" element={<EditPost />} />
+        <Route path=":postId" element={<Post />} />
+        <Route path="editpost:postId" element={<EditPost />} />
       </Routes>
     </BrowserRouter>
   );
