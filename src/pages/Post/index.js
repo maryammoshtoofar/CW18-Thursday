@@ -1,5 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import "../../App.css";
+
 const url = "http://localhost:3001/posts";
 
 const Post = () => {
@@ -10,17 +12,21 @@ const Post = () => {
       .then((res) => res.json())
       .then((result) => {
         setSinglePost(result);
-        console.log(result);
       });
   }, []);
-
+  const { PostTitle, Author, Content } = singlePost;
   return (
-    <>
-      <h2>{singlePost.PostTitle}</h2>
-      <small>{singlePost.Author}</small>
-      <p>{singlePost.Content}</p>
-      <Link to={`editPost`}>Edit Post</Link>
-    </>
+    <div className="post">
+      <h2>{PostTitle}</h2>
+      <small>by: {Author}</small>
+      <p>{Content}</p>
+      <Link to={`editPost`} className="primaryButton">
+        Edit Post
+      </Link>
+      <Link to={"/"} className="primaryButton">
+        Back To Home Page
+      </Link>
+    </div>
   );
 };
 

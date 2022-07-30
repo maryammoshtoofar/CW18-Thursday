@@ -1,9 +1,9 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Posts from "./Posts";
-import Post from "./Post";
-import EditPost from "./EditPost";
-import Home from "./Home";
+import Posts from "./pages/Posts";
+import Post from "./pages/Post";
+import EditPost from "./pages/EditPost";
+import Home from "./pages/Home";
 
 function App() {
   return (
